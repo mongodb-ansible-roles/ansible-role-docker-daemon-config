@@ -1,0 +1,7 @@
+---
+- name: Template Docker daemon config to remote host
+  template:
+    dest: '{{ docker_config_path }}'
+    src: daemon.json.j2
+  notify:
+    - restart docker

@@ -1,0 +1,4 @@
+---
+docker_data_root: /var/lib/docker
+docker_debug: false
+docker_log_driver: json-file

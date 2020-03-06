@@ -1,0 +1,4 @@
+---
+- name: Configure Docker for Linux
+  include_tasks: setup-Linux.yml
+  when: ansible_system == "Linux"
