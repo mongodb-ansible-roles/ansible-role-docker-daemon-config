@@ -3,8 +3,7 @@ Ansible role for docker-daemon-config
 
 An Ansible role for configuring the Docker daemon
 
-[![GitHub Actions](https://github.com/mongodb-ansible-roles/ansible-role-docker-daemon-config/workflows/Molecule%20Test/badge.svg)](https://github.com/mongodb-ansible-roles/ansible-role-docker-daemon-config/actions?query=workflow%3A%22Molecule+Test%22)
-[![GitHub Actions](https://github.com/mongodb-ansible-roles/ansible-role-docker-daemon-config/workflows/Release/badge.svg)](https://github.com/mongodb-ansible-roles/ansible-role-docker-daemon-config/actions?query=workflow%3A%22Release%22)
+![Test and Release](https://github.com/mongodb-ansible-roles/ansible-role-docker-daemon-config/workflows/Test%20and%20Release/badge.svg)
 
 Requirements
 ------------
