@@ -16,7 +16,7 @@ jobs:
           branch: master
           extra_plugins: |
             @semantic-release/changelog
-            @semantic-release/git@8.0.0
+            @semantic-release/git
   test:
     name: molecule test
     runs-on: ubuntu-latest
