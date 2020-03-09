@@ -1,0 +1,35 @@
+jobs:
+  release:
+    env:
+      GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+    # https://github.community/t5/GitHub-Actions/How-do-I-specify-job-dependency-running-in-another-workflow/m-p/33972/highlight/true#M1736
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Release
+        uses: cycjimmy/semantic-release-action@v2.1.3
+        with:
+          branch: master
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git@8.0.0
+  test:
+    name: molecule test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.6
+      - name: Install required dependencies
+        run: pip install -r requirements.txt
+      - run: molecule test --all
+name: Test and Release
+'on':
+  - push
+  - pull_request
